@@ -1,0 +1,49 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
+// swift-module-flags: -target arm64-apple-ios12.1 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name BluePad50v2
+@_exported import BluePad50v2
+import Foundation
+import Swift
+extension Date {
+  public func toString(_ dateStyle: Foundation.DateFormatter.Style, timeStyle: Foundation.DateFormatter.Style, relativeDate: Swift.Bool = false) -> Swift.String
+}
+@objc @_inheritsConvenienceInitializers public class BluePad : ObjectiveC.NSObject, BluePad50v2.BoricaDelegates {
+  @objc override dynamic public init()
+  public var version: Swift.String {
+    get
+  }
+  public func openPort(_ timeout: Swift.Int = 5) -> Swift.Bool
+  public func closePort()
+  public var portOpened: Swift.Bool {
+    get
+  }
+  public func ping() -> Swift.Bool
+  public func getDateTime(DT: inout Swift.String?) -> Swift.Bool
+  public func setDateTime(Year: Swift.UInt16, Month: Swift.UInt8, Day: Swift.UInt8, Hour: Swift.UInt8, Minute: Swift.UInt8, Sec: Swift.UInt8) -> Swift.Bool
+  public func getPinpadInfo(_ modelName: inout Swift.String, _ serialNumber: inout Swift.String, _ softVer: inout Swift.String, _ terminalID: inout Swift.String, _ menuType: inout Swift.UInt8)
+  public func setTimeOut(timeoutTransaction: Swift.Int) -> Swift.Bool
+  public func lastErrorMsg() -> Swift.String?
+  public func lastErrorCode() -> Swift.Int?
+  public func testConnection() -> Swift.Bool
+  public func purchase(amount: Swift.Int, outValues: inout Swift.String) -> Swift.Bool
+  public func purchaseCashback(amount: Swift.Int, cashback: Swift.Int, outValues: inout Swift.String) -> Swift.Bool
+  public func voidOfPurchase(amount: Swift.Int, constRRN: Swift.String, constAuthID: Swift.String, outValues: inout Swift.String) -> Swift.Bool
+  public func purchaseReturn(amount: Swift.Int, rn: Swift.String, outValues: inout Swift.String) -> Swift.Bool
+  public func universalReversalAdvice(amount: Swift.Int, numCheck: Swift.Int, outValues: inout Swift.String) -> Swift.Bool
+  public func universalReversal(amount: Swift.Int, numCheck: Swift.Int, outValues: inout Swift.String) -> Swift.Bool
+  public func authorization(amount: Swift.Int, outValues: inout Swift.String) -> Swift.Bool
+  public func authorizationConfirm(amount: Swift.Int, constRRN: Swift.String, outValues: inout Swift.String) -> Swift.Bool
+  public func voidAuthorization(amount: Swift.Int, constRRN: Swift.String, constAuthID: Swift.String, outValues: inout Swift.String) -> Swift.Bool
+  public func endOfDay(outValues: inout Swift.String) -> Swift.Bool
+  public func balanceInquiry(outValues: inout Swift.String) -> Swift.Bool
+  public func keyChange(outValues: inout Swift.String) -> Swift.Bool
+  public func getLastTags(tagCodes: inout Swift.String) -> Swift.Bool
+  public func getLastTag(tag: Swift.UInt16, valueStr: inout Swift.String) -> Swift.Bool
+  public func getReceiptTags() -> Swift.String?
+  public func getReportTags(recordType: Swift.UInt8) -> Swift.String?
+  public func getReportInfo(recordCount: inout Swift.UInt16) -> Swift.Bool?
+  public func getReportTagsByStan(TransNumber: Swift.Int) -> Swift.String?
+  @objc public func transactionFailed(_ device: BluePad50v2.Borica!, errorCode: Swift.Int32)
+  @objc public func transactionComplete(_ device: BluePad50v2.Borica!, transactionType: BluePad50v2.TRANSACTION_TYPE, resultData: Foundation.Data!)
+  @objc deinit
+}

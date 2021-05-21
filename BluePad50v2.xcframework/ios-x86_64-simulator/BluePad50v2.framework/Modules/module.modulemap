@@ -1,0 +1,11 @@
+framework module BluePad50v2 {
+  umbrella header "BluePad50v2.h"
+
+  export *
+  module * { export * }
+}
+
+module BluePad50v2.Swift {
+    header "BluePad50v2-Swift.h"
+    requires objc
+}
