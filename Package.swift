@@ -12,6 +12,6 @@ let package = Package(
     ],
     targets: [
         .binaryTarget(
-            name: "BluePad50v2.xcframework",
+            name: "BluePad50v2",
             path: "BluePad50v2.xcframework")
     ])
