@@ -6,5 +6,6 @@ To use one of the supported accessories in your application, follow these steps:
 To add a xcframework, you need:
 - Drag the "BluePad50v2.framework" folder and select "Copy items if needed"
 - Go to General-> Frameworks, Libraries and Embedded Content and select "Embed and Sign" for BluePad50v2.xcframework
+
 Use the framework
 import  BluePad50v2
